@@ -41,6 +41,7 @@
 
 	<!-- Custom styles -->
     <link href="css/custom.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
 
   </head>
 <!-- NAVBAR
@@ -88,37 +89,12 @@
     </div>
     
 <main class="main-content">
-<div class="blog-header">
-        <h1 class="blog-title">About Me</h1>
-        <p class="lead blog-description">The person behind the designs</p>
-      </div>
-<hr class="featurette-divider">
-      
-   
-   <img src="images/IMG_8296.jpg" alt="picture of me" class="float-left">
-<p>I'm Catherine, but most people call me Katie. I have a passion for designs of all kinds. My specialties are fashion, graphic and web. I am also a problem solver by nature. I think that's what I love design. I most recently received an Associates of Art Degree in Graphic and Web Design from the Art Institute of Washington, and I not-so-recently received a Bachelors of Science Degree in Fashion Design and Merchandising with minors in Business Adminstration and Advertising from West Virginia University.
-</p>
-
-<p>
-As a recent graduate of The Art Institute of Washington, I discovered that I am not only a skilled graphic designer, but I also enjoy web design. Reading HTML, CSS and JavaScript makes me feel like I'm running the Matrix. I went into school thinking that I would come out a printmaker, and came out both a printmaker and a digital junkie. This is the 21st century after all!
-</p>
-
-<p>
-As a not-so-recent graduate of West Virginia University, I have a Bachelors of Science in Fashion Design and Merchandising. While attending WVU, I learned the skill of long nights in a sewing studio, and a full appreciate of textiles and apparel construction. I also learned the valuable skills of being an avid sports fan. Let's go, Mountaineers!
-</p>
-
-<p>
-What can I do for you? A lot, actually. In fact, what can't I do for you, should be the question. Do you feel like we're a good fit for each other? Feel free to <a href="contact.html">contact me</a>.
-</p>
-
-<p>
-<h2 class="blog-post-title">Let's be social</h2>
-<a href="https://www.linkedin.com/pub/catherine-crockett/11/231/39a" style="text-decoration:none;"><span style="font: 80% Arial,sans-serif; color:#0783B6;"><img src="https://static.licdn.com/scds/common/u/img/webpromo/btn_in_20x15.png" width="20" height="15" alt="View Catherine Crockett's LinkedIn profile" style="vertical-align:middle;" border="0">&nbsp;View Catherine Crockett's profile</span></a>
-
-<!--Twitter-->
-</p>
-
-</main>
+	<h1 class="page-header">I'm literally building this as you're trying to view it.</h1>
+		<p>
+		Gimme a few hours, and hopefully it'll look different.
+		</p>
+	<!--FOR PRINT-->
+	
      <!-- /END SECTION -->
       
       <hr class="featurette-divider">
@@ -135,9 +111,56 @@ What can I do for you? A lot, actually. In fact, what can't I do for you, should
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+   
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/ekko-lightbox.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="assets/css/ie10-viewport-bug-workaround.css"></script>
+
+    <script type="text/javascript">
+            $(document).ready(function ($) {
+                // delegate calls to data-toggle="lightbox"
+                $(document).delegate('*[data-toggle="lightbox"]:not([data-gallery="navigateTo"])', 'click', function(event) {
+                    event.preventDefault();
+                    return $(this).ekkoLightbox({
+                        onShown: function() {
+                            if (window.console) {
+                                return console.log('Checking our the events huh?');
+                            }
+                        },
+						onNavigate: function(direction, itemIndex) {
+                            if (window.console) {
+                                return console.log('Navigating '+direction+'. Current item: '+itemIndex);
+                            }
+						}
+                    });
+                });
+                //Programatically call
+                $('#open-image').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+                $('#open-youtube').click(function (e) {
+                    e.preventDefault();
+                    $(this).ekkoLightbox();
+                });
+				// navigateTo
+                $(document).delegate('*[data-gallery="navigateTo"]', 'click', function(event) {
+                    event.preventDefault();
+                    var lb;
+                    return $(this).ekkoLightbox({
+                        onShown: function() {
+                            lb = this;
+							$(lb.modal_content).on('click', '.modal-footer a', function(e) {
+								e.preventDefault();
+								lb.navigateTo(2);
+							});
+                        }
+                    });
+                });
+            });
+        </script>
   </body>
 </html>

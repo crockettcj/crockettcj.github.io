@@ -36,6 +36,8 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
+	<link href="css/custom.css" rel="stylesheet">
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -46,7 +48,7 @@
     <div class="navbar-wrapper">
       <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
+       <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -55,24 +57,25 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#"><span class="white-txt">Catherine</span> <span class="pink-txt">J</span> <span class="white-txt">Crockett</span></a>
+              <a class="navbar-brand" href="http://crockettcj.com/"><span class="white-txt">Catherine</span> <span class="pink-txt">J</span> <span class="white-txt">Crockett</span></a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-               	<li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li class="active"><a href="contact.html">Contact</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <!--li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+               <li class="active"><a href="index.html">Home</a></li>
+                 <li class="dropdown">
+                  <a href="about.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About<span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li-->
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="#">Resume</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="gallery.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work<span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="fashion.html">Fashion</a></li>
+                    <li><a href="graphic.html">Graphic</a></li>
+                    <li><a href="web.html">Web</a></li>
                   </ul>
                 </li>
               </ul>
@@ -89,12 +92,43 @@
 	<div class="main-header">
         <h1>Let's work together</h1>
     </div>
-    
+    <hr class="featurette-divider">
  <div class="main-body-text">
-        <h2>Email is the best way to contact me.</h2>
-			<p>It's everywhere, and it's all the time. Although, if you're anti-email, I wouldn't necessarily turn away a carrier pigeon.</p> 
-			<p><a href="mailto:crockettcj@gmail.com?subject=Inquiries via website">crockettcj@gmail.com</a></p>
-	</div>
+			<p>Email is my best form of contact. It's everywhere and nowhere at the same time.</p> 
+			<p>You can use the handy-dandy form below to send me an email.</p> 
+ 
+    <!-- FORM -->
+       <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                            <div class="form-top">
+                                <h3>Contact me</h3>
+                                <p>Fill in the form below to send me a message:</p>
+                            </div>
+                            <div class="form-bottom contact-form">
+                                <form role="form" action="assets/contact.php" method="post">
+                                    <div class="form-group">
+                                        <label class="sr-only" for="contact-email">Email</label>
+                                        <input type="text" name="email" placeholder="Email..." class="contact-email form-control" id="contact-email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="contact-subject">Subject</label>
+                                        <input type="text" name="subject" placeholder="Subject..." class="contact-subject form-control" id="contact-subject">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only" for="contact-message">Message</label>
+                                        <textarea name="message" placeholder="Message..." class="contact-message form-control" id="contact-message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-antispam">Are you a robot? Riddle me this: 7 + 5 = ?</label>
+                                        <input type="text" name="antispam" placeholder="Your answer..." class="contact-antispam form-control" id="contact-antispam">
+                                    </div>
+                                    <button type="submit" class="btn">Send message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+        <div class="conclusion"><p>If you don't trust the robots in your computer, you can always email me at <a href="mailto:crockettcj@gmail.com?subject=Inquiries via website">crockettcj@gmail.com</a></p></div>
 	</article>
 	<!-- END REAL CONTENT-->
 	
@@ -103,7 +137,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Catherine <span class="pink-txt">J</span> Crockett &middot; This website was built on the <a href="http://getbootstrap.com/">Bootstrap</a> framework. &middot; Hosted by <a href="https://github.com/crockettcj/crockettcj.github.io">Github</a></p>
+         <p>&copy; 2015 Catherine <span class="pink-txt">J</span> Crockett &raquo; This website was built on the <a href="http://getbootstrap.com/">Bootstrap</a> framework. &raquo; Hosted by <a href="https://github.com/crockettcj/crockettcj.github.io">Github</a></p>
       </footer>
 
     </div><!-- /.container -->
@@ -113,8 +147,9 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.min.js"></script>
+    <!--script src="assets/js/jquery.backstretch.min.js"></script-->
+    <script src="js/scripts.js"></script>
     <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
