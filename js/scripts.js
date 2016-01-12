@@ -3,7 +3,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch("assets/img/backgrounds/1.jpg");
+    //$.backstretch("assets/img/backgrounds/1.jpg");
      
     /*
     Contact form
@@ -17,7 +17,7 @@ jQuery(document).ready(function() {
         var postdata = $('.contact-form form').serialize();
         $.ajax({
             type: 'POST',
-            url: '/../assets/contact.php',
+            url: '../assets/contact.php',
             data: postdata,
             dataType: 'json',
             success: function(json) {
