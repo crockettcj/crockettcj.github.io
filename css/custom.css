@@ -29,6 +29,10 @@ float: left;
 margin: 1em;
 }
 
+div.row > div > div.row {
+				margin-bottom: 15px;n
+			}
+
 .book-titles{
 font-style: italic;
 }
